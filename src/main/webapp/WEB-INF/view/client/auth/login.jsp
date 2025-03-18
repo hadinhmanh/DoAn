@@ -10,7 +10,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <meta name="description" content="" />
                 <meta name="author" content="" />
-                <title>Login - Laptopshop</title>
+                <title>Login - FarmFresh</title>
                 <link href="css/style.css" rel="stylesheet" />
                 <link href="css/bootstrap.min.css" rel="stylesheet">
                 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>

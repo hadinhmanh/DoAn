@@ -5,7 +5,7 @@
 
         <head>
             <meta charset="utf-8">
-            <title>Admin-Dashboard</title>
+            <title>User</title>
             <meta content="width=device-width, initial-scale=1.0" name="viewport">
             <meta content="" name="keywords">
             <meta content="" name="description">
@@ -24,14 +24,14 @@
             <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
             <!-- Libraries Stylesheet -->
-            <link href="admin/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-            <link href="admin/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+            <link href="/admin/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+            <link href="/admin/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
             <!-- Customized Bootstrap Stylesheet -->
-            <link href="admin/css/bootstrap.min.css" rel="stylesheet">
+            <link href="/admin/css/bootstrap.min.css" rel="stylesheet">
 
             <!-- Template Stylesheet -->
-            <link href="admin/css/style.css" rel="stylesheet">
+            <link href="/admin/css/style.css" rel="stylesheet">
         </head>
 
         <body>
@@ -58,93 +58,25 @@
                     <!-- Navbar End -->
 
 
-                    <!-- Sale & Revenue Start -->
-                    <div class="container-fluid pt-4 px-4">
-                        <div class="row g-4">
-                            <div class="col-sm-6 col-xl-3">
-                                <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                                    <i class="fa fa-chart-line fa-3x text-primary"></i>
-                                    <div class="ms-3">
-                                        <p class="mb-2">Today Sale</p>
-                                        <h6 class="mb-0">$1234</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-xl-3">
-                                <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                                    <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                                    <div class="ms-3">
-                                        <p class="mb-2">Total Sale</p>
-                                        <h6 class="mb-0">$1234</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-xl-3">
-                                <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                                    <i class="fa fa-chart-area fa-3x text-primary"></i>
-                                    <div class="ms-3">
-                                        <p class="mb-2">Today Revenue</p>
-                                        <h6 class="mb-0">$1234</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-xl-3">
-                                <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                                    <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                                    <div class="ms-3">
-                                        <p class="mb-2">Total Revenue</p>
-                                        <h6 class="mb-0">$1234</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Sale & Revenue End -->
-
-
-                    <!-- Sales Chart Start -->
-                    <div class="container-fluid pt-4 px-4">
-                        <div class="row g-4">
-                            <div class="col-sm-12 col-xl-6">
-                                <div class="bg-light text-center rounded p-4">
-                                    <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <h6 class="mb-0">Worldwide Sales</h6>
-                                        <a href="">Show All</a>
-                                    </div>
-                                    <canvas id="worldwide-sales"></canvas>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-xl-6">
-                                <div class="bg-light text-center rounded p-4">
-                                    <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <h6 class="mb-0">Salse & Revenue</h6>
-                                        <a href="">Show All</a>
-                                    </div>
-                                    <canvas id="salse-revenue"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Sales Chart End -->
-
-
                     <!-- Recent Sales Start -->
-                    <div class="container-fluid pt-4 px-4">
+                    <div class="container-fluid pt-5 px-4">
                         <div class="bg-light text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Recent Salse</h6>
-                                <a href="">Show All</a>
+                                <h6 class="mb-0">Show All</h6>
+                                <a href="/admin/user/create">Create</a>
                             </div>
                             <div class="table-responsive">
                                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                                     <thead>
                                         <tr class="text-dark">
-                                            <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Invoice</th>
-                                            <th scope="col">Customer</th>
-                                            <th scope="col">Amount</th>
-                                            <th scope="col">Status</th>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">FullName</th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col">Province</th>
+                                            <th scope="col">District</th>
+                                            <th scope="col">Ward</th>
+                                            <th scope="col">Role</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
@@ -343,16 +275,16 @@
             <!-- JavaScript Libraries -->
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="admin/lib/chart/chart.min.js"></script>
-            <script src="admin/lib/easing/easing.min.js"></script>
-            <script src="admin/lib/waypoints/waypoints.min.js"></script>
-            <script src="admin/lib/owlcarousel/owl.carousel.min.js"></script>
-            <script src="admin/lib/tempusdominus/js/moment.min.js"></script>
-            <script src="admin/lib/tempusdominus/js/moment-timezone.min.js"></script>
-            <script src="admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+            <script src="/admin/lib/chart/chart.min.js"></script>
+            <script src="/admin/lib/easing/easing.min.js"></script>
+            <script src="/admin/lib/waypoints/waypoints.min.js"></script>
+            <script src="/admin/lib/owlcarousel/owl.carousel.min.js"></script>
+            <script src="/admin/lib/tempusdominus/js/moment.min.js"></script>
+            <script src="/admin/lib/tempusdominus/js/moment-timezone.min.js"></script>
+            <script src="/admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
             <!-- Template Javascript -->
-            <script src="admin/js/main.js"></script>
+            <script src="/admin/js/main.js"></script>
         </body>
 
         </html>
