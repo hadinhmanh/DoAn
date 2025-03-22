@@ -1,5 +1,7 @@
 package com.example.DoAn.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.DoAn.domain.Role;
@@ -31,6 +33,14 @@ public class UserService {
         return user;
     }
 
+    public Page<User> getAllUsers(Pageable page) {
+        return this.userRepository.findAll(page);
+    }
+
+    public User getUserById(long id) {
+        return this.userRepository.findById(id);
+    }
+
     public boolean checkEmailExist(String email) {
         return this.userRepository.existsByEmail(email);
     }
@@ -41,5 +51,9 @@ public class UserService {
 
     public User getUserByEmail(String email) {
         return this.userRepository.findByEmail(email);
+    }
+
+    public void deleteUser(long id) {
+        this.userRepository.deleteById(id);
     }
 }

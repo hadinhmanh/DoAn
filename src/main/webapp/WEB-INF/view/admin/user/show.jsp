@@ -81,184 +81,65 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><input class="form-check-input" type="checkbox"></td>
-                                            <td>01 Jan 2045</td>
-                                            <td>INV-0123</td>
-                                            <td>Jhon Doe</td>
-                                            <td>$123</td>
-                                            <td>Paid</td>
-                                            <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><input class="form-check-input" type="checkbox"></td>
-                                            <td>01 Jan 2045</td>
-                                            <td>INV-0123</td>
-                                            <td>Jhon Doe</td>
-                                            <td>$123</td>
-                                            <td>Paid</td>
-                                            <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><input class="form-check-input" type="checkbox"></td>
-                                            <td>01 Jan 2045</td>
-                                            <td>INV-0123</td>
-                                            <td>Jhon Doe</td>
-                                            <td>$123</td>
-                                            <td>Paid</td>
-                                            <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><input class="form-check-input" type="checkbox"></td>
-                                            <td>01 Jan 2045</td>
-                                            <td>INV-0123</td>
-                                            <td>Jhon Doe</td>
-                                            <td>$123</td>
-                                            <td>Paid</td>
-                                            <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><input class="form-check-input" type="checkbox"></td>
-                                            <td>01 Jan 2045</td>
-                                            <td>INV-0123</td>
-                                            <td>Jhon Doe</td>
-                                            <td>$123</td>
-                                            <td>Paid</td>
-                                            <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                        </tr>
+                                        <c:forEach var="user" items="${users1}">
+
+                                            <tr>
+                                                <th>${user.id}</th>
+                                                <td>${user.email}</td>
+                                                <td>${user.fullName}</td>
+                                                <td>${user.phone}</td>
+                                                <td>${user.province}</td>
+                                                <td>${user.district}</td>
+                                                <td>${user.ward}</td>
+
+                                                <td>${user.role.name}</td>
+
+                                                <td>
+                                                    <a href="/admin/user/${user.id}" class="btn btn-success">View</a>
+                                                    <a href="/admin/user/update/${user.id}"
+                                                        class="btn btn-warning  mx-2">Update</a>
+                                                    <a href="/admin/user/delete/${user.id}"
+                                                        class="btn btn-danger">Delete</a>
+                                                </td>
+                                            </tr>
+
+                                        </c:forEach>
+
                                     </tbody>
                                 </table>
+
                             </div>
+
                         </div>
                     </div>
                     <!-- Recent Sales End -->
 
 
-                    <!-- Widgets Start -->
-                    <div class="container-fluid pt-4 px-4">
-                        <div class="row g-4">
-                            <div class="col-sm-12 col-md-6 col-xl-4">
-                                <div class="h-100 bg-light rounded p-4">
-                                    <div class="d-flex align-items-center justify-content-between mb-2">
-                                        <h6 class="mb-0">Messages</h6>
-                                        <a href="">Show All</a>
-                                    </div>
-                                    <div class="d-flex align-items-center border-bottom py-3">
-                                        <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt=""
-                                            style="width: 40px; height: 40px;">
-                                        <div class="w-100 ms-3">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h6 class="mb-0">Jhon Doe</h6>
-                                                <small>15 minutes ago</small>
-                                            </div>
-                                            <span>Short message goes here...</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center border-bottom py-3">
-                                        <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt=""
-                                            style="width: 40px; height: 40px;">
-                                        <div class="w-100 ms-3">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h6 class="mb-0">Jhon Doe</h6>
-                                                <small>15 minutes ago</small>
-                                            </div>
-                                            <span>Short message goes here...</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center border-bottom py-3">
-                                        <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt=""
-                                            style="width: 40px; height: 40px;">
-                                        <div class="w-100 ms-3">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h6 class="mb-0">Jhon Doe</h6>
-                                                <small>15 minutes ago</small>
-                                            </div>
-                                            <span>Short message goes here...</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center pt-3">
-                                        <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt=""
-                                            style="width: 40px; height: 40px;">
-                                        <div class="w-100 ms-3">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h6 class="mb-0">Jhon Doe</h6>
-                                                <small>15 minutes ago</small>
-                                            </div>
-                                            <span>Short message goes here...</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-xl-4">
-                                <div class="h-100 bg-light rounded p-4">
-                                    <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <h6 class="mb-0">Calender</h6>
-                                        <a href="">Show All</a>
-                                    </div>
-                                    <div id="calender"></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-xl-4">
-                                <div class="h-100 bg-light rounded p-4">
-                                    <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <h6 class="mb-0">To Do List</h6>
-                                        <a href="">Show All</a>
-                                    </div>
-                                    <div class="d-flex mb-2">
-                                        <input class="form-control bg-transparent" type="text" placeholder="Enter task">
-                                        <button type="button" class="btn btn-primary ms-2">Add</button>
-                                    </div>
-                                    <div class="d-flex align-items-center border-bottom py-2">
-                                        <input class="form-check-input m-0" type="checkbox">
-                                        <div class="w-100 ms-3">
-                                            <div class="d-flex w-100 align-items-center justify-content-between">
-                                                <span>Short task goes here...</span>
-                                                <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center border-bottom py-2">
-                                        <input class="form-check-input m-0" type="checkbox">
-                                        <div class="w-100 ms-3">
-                                            <div class="d-flex w-100 align-items-center justify-content-between">
-                                                <span>Short task goes here...</span>
-                                                <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center border-bottom py-2">
-                                        <input class="form-check-input m-0" type="checkbox" checked>
-                                        <div class="w-100 ms-3">
-                                            <div class="d-flex w-100 align-items-center justify-content-between">
-                                                <span><del>Short task goes here...</del></span>
-                                                <button class="btn btn-sm text-primary"><i
-                                                        class="fa fa-times"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center border-bottom py-2">
-                                        <input class="form-check-input m-0" type="checkbox">
-                                        <div class="w-100 ms-3">
-                                            <div class="d-flex w-100 align-items-center justify-content-between">
-                                                <span>Short task goes here...</span>
-                                                <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center pt-2">
-                                        <input class="form-check-input m-0" type="checkbox">
-                                        <div class="w-100 ms-3">
-                                            <div class="d-flex w-100 align-items-center justify-content-between">
-                                                <span>Short task goes here...</span>
-                                                <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="pt-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                                <a class="${1 eq currentPage ? 'disabled page-link' : 'page-link'}"
+                                    href="/admin/user?page=${currentPage-1}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <c:forEach begin="0" end="${totalPages-1}" varStatus="loop">
+                                <li class="page-item">
+                                    <a class="${(loop.index + 1) eq currentPage ? 'active page-link' : 'page-link'}"
+                                        href="/admin/user?page=${loop.index + 1}">${loop.index
+                                        + 1}
+                                    </a>
+                                </li>
+                            </c:forEach>
+
+                            <li class="page-item">
+                                <a class="${totalPages eq currentPage ? 'disabled page-link' : 'page-link'}"
+                                    href="/admin/user?page=${currentPage + 1}" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <!-- Widgets End -->
 
 
                     <!-- Footer Start -->
