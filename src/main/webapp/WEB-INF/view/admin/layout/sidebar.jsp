@@ -20,6 +20,7 @@
                 <div class="navbar-nav w-100">
                     <a href="/admin" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="/admin/user" class="nav-item nav-link"><i class="fa fa-users me-2"></i>User</a>
+                    <a href="/admin/categories" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Categories</a>
                     <a href="index.html" class="nav-item nav-link"><i class="fa fa-shopping-bag me-2"></i>Product</a>
                     <a href="index.html" class="nav-item nav-link"><i class="fa fa-shopping-cart me-2"></i>Order</a>
 

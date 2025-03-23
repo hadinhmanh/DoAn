@@ -1,7 +1,9 @@
 package com.example.DoAn.domain;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,7 +11,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.DecimalMin;
@@ -53,9 +56,9 @@ public class Product {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Categories category;
+    @ManyToMany
+    @JoinTable(name = "product_category", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private Set<Categories> categories = new HashSet<>();
 
     public long getId() {
         return id;
@@ -137,12 +140,12 @@ public class Product {
         this.updatedAt = updatedAt;
     }
 
-    public Categories getCategory() {
-        return category;
+    public Set<Categories> getCategories() {
+        return categories;
     }
 
-    public void setCategory(Categories category) {
-        this.category = category;
+    public void setCategories(Set<Categories> categories) {
+        this.categories = categories;
     }
 
 }
