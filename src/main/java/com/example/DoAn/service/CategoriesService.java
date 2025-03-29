@@ -1,5 +1,9 @@
 package com.example.DoAn.service;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -19,6 +23,10 @@ public class CategoriesService {
         return this.categoriesRepository.findAll(page);
     }
 
+    public List<Categories> getAll() {
+        return this.categoriesRepository.findAll();
+    }
+
     public Categories handleSaveCategories(Categories categories) {
         Categories categories2 = this.categoriesRepository.save(categories);
         return categories2;
@@ -35,4 +43,10 @@ public class CategoriesService {
     public void deleteCategories(long id) {
         this.categoriesRepository.deleteById(id);
     }
+
+    // Hàm lấy danh sách danh mục theo ID
+    public List<Categories> getCategoriesByIds(List<Long> categoryIds) {
+        return this.categoriesRepository.findAllById(categoryIds);
+    }
+
 }

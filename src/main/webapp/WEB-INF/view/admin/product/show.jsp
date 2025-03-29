@@ -5,7 +5,7 @@
 
         <head>
             <meta charset="utf-8">
-            <title>Categories</title>
+            <title>Products</title>
             <meta content="width=device-width, initial-scale=1.0" name="viewport">
             <meta content="" name="keywords">
             <meta content="" name="description">
@@ -62,8 +62,8 @@
                     <div class="container-fluid pt-5 px-4">
                         <div class="bg-light text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Show All Categories</h6>
-                                <a href="/admin/categories/create">Create</a>
+                                <h6 class="mb-0">Show All Products</h6>
+                                <a href="/admin/product/create">Create</a>
                             </div>
                             <div class="table-responsive">
                                 <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -71,25 +71,42 @@
                                         <tr class="text-dark">
                                             <th scope="col">ID</th>
                                             <th scope="col">Name</th>
-                                            <th scope="col">Description</th>
-                                            <th scope="col">Count</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Sale Price</th>
+                                            <th scope="col">Image</th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Category</th>
+                                            <th scope="col">CreateAt</th>
+                                            <th scope="col">UpdateAt</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <c:forEach var="cate" items="${cates}">
+                                        <c:forEach var="product" items="${products}">
 
                                             <tr>
-                                                <th>${cate.id}</th>
-                                                <th>${cate.name}</th>
-                                                <th>${cate.description}</th>
-                                                <th>Số lượng</th>
+                                                <th>${product.id}</th>
+                                                <td>${product.name}</td>
+                                                <td>${product.price}</td>
+                                                <td>${product.salePrice}</td>
+                                                <td><img src="/products/${product.firstImage}" alt="Product Image"
+                                                        width="100">
+                                                </td>
+                                                <td>${product.quantity}</td>
                                                 <td>
-                                                    <a href="/admin/categories/${cate.id}"
+                                                    <c:forEach var="category" items="${product.categories}">
+                                                        ${category.name} <br />
+                                                    </c:forEach>
+                                                </td>
+                                                <td>${product.createdAt}</td>
+                                                <td>${product.updatedAt}</td>
+
+                                                <td>
+                                                    <a href="/admin/product/${product.id}"
                                                         class="btn btn-success">View</a>
-                                                    <a href="/admin/categories/update/${cate.id}"
+                                                    <a href="/admin/product/update/${product.id}"
                                                         class="btn btn-warning  mx-2">Update</a>
-                                                    <a href="/admin/categories/delete/${cate.id}"
+                                                    <a href="/admin/product/delete/${product.id}"
                                                         class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
@@ -110,14 +127,14 @@
                         <ul class="pagination justify-content-center">
                             <li class="page-item">
                                 <a class="${1 eq currentPage ? 'disabled page-link' : 'page-link'}"
-                                    href="/admin/categories?page=${currentPage-1}" aria-label="Previous">
+                                    href="/admin/product?page=${currentPage-1}" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                 </a>
                             </li>
                             <c:forEach begin="0" end="${totalPages-1}" varStatus="loop">
                                 <li class="page-item">
                                     <a class="${(loop.index + 1) eq currentPage ? 'active page-link' : 'page-link'}"
-                                        href="/admin/categories?page=${loop.index + 1}">${loop.index
+                                        href="/admin/product?page=${loop.index + 1}">${loop.index
                                         + 1}
                                     </a>
                                 </li>
@@ -125,7 +142,7 @@
 
                             <li class="page-item">
                                 <a class="${totalPages eq currentPage ? 'disabled page-link' : 'page-link'}"
-                                    href="/admin/categories?page=${currentPage + 1}" aria-label="Next">
+                                    href="/admin/product?page=${currentPage + 1}" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
                                 </a>
                             </li>

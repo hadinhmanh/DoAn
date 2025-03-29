@@ -14,9 +14,12 @@ public interface CategoriesRepository extends JpaRepository<Categories, Long> {
 
     Page<Categories> findAll(Pageable page);
 
+    List<Categories> findAll();
+
     Categories findByName(String name);
 
     Categories findById(long id);
 
     void deleteById(long id);
+
 }

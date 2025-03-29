@@ -1,6 +1,7 @@
 package com.example.DoAn.domain;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.Entity;
@@ -23,7 +24,7 @@ public class Categories {
     private String description;
 
     @ManyToMany(mappedBy = "categories")
-    private Set<Product> products = new HashSet<>();
+    private List<Product> products;
 
     public long getId() {
         return id;
@@ -54,11 +55,11 @@ public class Categories {
         return "Categories [id=" + id + ", name=" + name + ", description=" + description + "]";
     }
 
-    public Set<Product> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(Set<Product> products) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 
